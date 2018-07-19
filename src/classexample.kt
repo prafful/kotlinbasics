@@ -1,7 +1,14 @@
-class Friends{
-    var name:String =""
+import java.time.Duration
+
+class Friends(var name:String="adi"){
+    //var name:String =""
     private var location:String ="chennai"
     var duration: Number = 0
+
+/*  check mixing primary and secondary constructor
+    constructor(name: String, duration: Number, ){
+
+    }*/
 
     fun addFriend(nm: String, loc:String, dur:Number){
         this.name = nm
@@ -34,11 +41,17 @@ class Friends{
 
 fun main(args: Array<String>){
 
-    var f = Friends()
-    f.addFriend("prafful", "chennai", 2)
+    var f1 = Friends("adi")
+    var f2 = Friends()
+
+
+
+    f1.addFriend("prafful", "chennai", 2)
 
 
     println("Nested Class: " + Friends.SchoolFriends().schoolName())
-    println("Inner Class: " + f.WorkplaceFriends().companyName())
+    println("Inner Class: " + f1.WorkplaceFriends().companyName())
+    println("--------------------")
+    println("${f2.name}")
 
 }
